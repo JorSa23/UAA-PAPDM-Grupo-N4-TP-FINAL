@@ -12,6 +12,4 @@ data class Examenes(
     val timestamp: Timestamp = Timestamp.now(),
     val colorIndex: Int = 0,
     val documentId:String = "",
-
-
 )

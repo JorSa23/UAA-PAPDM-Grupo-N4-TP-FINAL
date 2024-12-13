@@ -12,8 +12,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
 import androidx.navigation.navArgument
-import com.example.apptareas.detail.DetailScreen
-import com.example.apptareas.detail.DetailViewModel
+import com.example.apptareas.detail.Examenes.ExamenScreen
+import com.example.apptareas.detail.Examenes.ExamenViewModel
 import com.example.apptareas.home.Home
 import com.example.apptareas.home.HomeViewMode
 
@@ -35,7 +35,7 @@ enum class NestedRoutes{
 fun Navigation(
     navController: NavHostController = rememberNavController(),
     loginViewModel: LoginViewModel,
-    detailViewModel: DetailViewModel,
+    examenViewModel: ExamenViewModel,
     homeViewMode: HomeViewMode
 ) {
     NavHost(
@@ -46,7 +46,7 @@ fun Navigation(
         homeGraph(
             navController =
             navController,
-            detailViewModel,
+            examenViewModel,
             homeViewMode
         )
     }
@@ -101,7 +101,7 @@ fun NavGraphBuilder.authGraph(
 
 fun NavGraphBuilder.homeGraph(
     navController: NavHostController,
-    detailViewModel: DetailViewModel,
+    examenViewModel: ExamenViewModel,
     homeViewMode: HomeViewMode
 ){
     navigation(
@@ -118,7 +118,7 @@ fun NavGraphBuilder.homeGraph(
                         launchSingleTop = true
                     }
                 },
-                navToDetailPage = {
+                navToExamenPage = {
                     navController.navigate(HomeRoutes.Detail.name)
                 }
             ){
@@ -138,8 +138,8 @@ fun NavGraphBuilder.homeGraph(
                 defaultValue = ""
             })
         ){entry ->
-            DetailScreen(
-                detailViewModel = detailViewModel,
+            ExamenScreen(
+                examenViewModel = examenViewModel,
                 examenId = entry.arguments?.getString("id") as String,
             ) {
                navController.navigateUp()

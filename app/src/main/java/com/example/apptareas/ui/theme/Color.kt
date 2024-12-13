@@ -9,3 +9,17 @@ val Pink80 = Color(0xFFEFB8C8)
 val Purple40 = Color(0xFF6650a4)
 val PurpleGrey40 = Color(0xFF625b71)
 val Pink40 = Color(0xFF7D5260)
+
+
+
+
+
+
+
+
+
+
+val cfacultad = Color (0xFFFFF1B3)
+val cexamen = Color (0xFFBAF1DA)
+val ccompras = Color (0xFFF5D9FF)
+val ccasa = Color (0xFFA7D7EB)

@@ -9,7 +9,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.apptareas.detail.DetailViewModel
+import com.example.apptareas.detail.Examenes.ExamenViewModel
 import com.example.apptareas.home.HomeViewMode
 import com.example.apptareas.login.LoginViewModel
 import com.example.apptareas.navigation.Navigation
@@ -22,14 +22,14 @@ class MainActivity : ComponentActivity() {
         setContent {
             val loginViewModel = viewModel(modelClass = LoginViewModel :: class.java )
             val homeViewMode = viewModel(modelClass = HomeViewMode :: class.java )
-            val detailViewModel = viewModel(modelClass = DetailViewModel :: class.java )
+            val examenViewModel = viewModel(modelClass = ExamenViewModel :: class.java )
             AppTareasTheme {
 
                 Surface(modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background){
                     Navigation(
                         loginViewModel = loginViewModel,
-                        detailViewModel = detailViewModel,
+                        examenViewModel = examenViewModel,
                         homeViewMode = homeViewMode)
                 }
             }

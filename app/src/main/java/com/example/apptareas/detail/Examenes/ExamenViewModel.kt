@@ -1,17 +1,15 @@
-package com.example.apptareas.detail
+package com.example.apptareas.detail.Examenes
 
-import android.widget.AdapterView.OnItemSelectedListener
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import com.example.apptareas.models.Examenes
 import com.example.apptareas.repository.StorageRepository
-import com.google.firebase.Firebase
 import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseUser
 
-class DetailViewModel(
+class ExamenViewModel(
     private val repository: StorageRepository = StorageRepository()
 ):ViewModel() {
     var detailUiState by mutableStateOf(DetailUiState())
